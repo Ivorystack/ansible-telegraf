@@ -1,4 +1,8 @@
 ---
 
 - name: Restart telegraf
-  service: name=telegraf state=restarted
+  become: true
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: telegraf

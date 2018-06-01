@@ -36,10 +36,10 @@
     state: present
 
 - name: Create telegraf service file
-    template:
-      src:   telegraf.service.j2
-      dest:  /lib/systemd/system/telegraf.service
-      owner: root
-      group: root
-      mode:  0644
-    notify: Restart telegraf
+  template:
+    src:   telegraf.service.j2
+    dest:  /lib/systemd/system/telegraf.service
+    owner: root
+    group: root
+    mode:  0644
+  notify: Restart telegraf
